@@ -111,13 +111,3 @@ allNavs.forEach((el) => {
 Uses jQuery in here,,,
 
 */
-
-
-let code = "";
-let www = "ABCDEFGTHRWEQASDCXCATWasdsadbsdqwewrtyqwruasdiasxavj0123456789*-_$";
-
-for(i = 0; i<12; i++){
-    code += www[Math.floor(Math.random() * www.length - 1)];
-}
-
-console.log(code)
