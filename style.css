@@ -119,6 +119,7 @@ article,
 a {
   text-decoration: none;
   color: unset;
+cursor: pointer;
 }
 .navigation-links ul li {
   list-style: none;
