@@ -18,7 +18,8 @@
   --btn-color: #ececec;
   --font-family: "Anton", sans-serif;
   --nav-font-color: #929292;
-  transition: 1s all;
+  transition: .6s all;
+user-select: none;
 }
 
 body {
@@ -47,15 +48,12 @@ nav {
 
 .dark-theme {
   background-color: var(--dark-theme) !important;
-  border-right: 1px solid black;
 }
 .article-dark-theme {
   background-color: var(--article-bg-color-dark) !important;
-  border-right: 1px solid black;
 }
 .light-theme {
   background-color: var(--light-theme) !important;
-  border-right: 1px solid gray;
 }
 .dark-font {
   color: var(--font-color-dark-theme) !important;
@@ -65,7 +63,6 @@ nav {
 }
 .article-light-theme {
   background-color: var(--article-bg-color-light) !important;
-  border-right: 1px solid gray;
 }
 article {
   width: 65%;
