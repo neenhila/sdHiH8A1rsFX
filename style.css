@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --main-color: white;
+  --light-theme: #ffffff;
+  --dark-theme: #191919;
+  --article-bg-color: #e1e1e1;
+  --article-bg-color-dark: #191919;
+  --article-bg-color-light: #e1e1e1;
+  --font-color: #191919;
+  --font-color-dark-theme: #ffffff;
+  --font-color-light-heme: #191919;
+  --btn-dark-bg: #4e4e4e;
+  --btn-light-bg: #539a48;
+  --btn-color: #ececec;
+  --font-family: "Anton", sans-serif;
+  --nav-font-color: #929292;
+  transition: 1s all;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10% 6%;
+}
+
+nav {
+  width: 15%;
+  min-width: 250px !important;
+  height: 80vh;
+  background-color: var(--main-color);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dark-theme {
+  background-color: var(--dark-theme) !important;
+  border-right: 1px solid black;
+}
+.article-dark-theme {
+  background-color: var(--article-bg-color-dark) !important;
+  border-right: 1px solid black;
+}
+.light-theme {
+  background-color: var(--light-theme) !important;
+  border-right: 1px solid gray;
+}
+.dark-font {
+  color: var(--font-color-dark-theme) !important;
+}
+.light-font {
+  color: var(--font-color-light-heme) !important;
+}
+.article-light-theme {
+  background-color: var(--article-bg-color-light) !important;
+  border-right: 1px solid gray;
+}
+article {
+  width: 65%;
+  height: 80vh;
+  min-width: 600px !important;
+  background-color: var(--article-bg-color);
+  padding: 100px 25px 100px 100px;
+  display: grid;
+  grid-template-columns: repeat(2fr, 330px);
+  grid-template-rows: repeat(6fr, 250px);
+  overflow: scroll;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+article::-webkit-scrollbar{
+  display: none;
+}
+.right-fixed {
+  width: 12%;
+  height: 80vh;
+  min-width: 150px !important;
+  background-color: var(--main-color);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-right: 1px solid transparent!important;
+}
+nav,
+article,
+.right-fixed {
+  flex-shrink: 0;
+}
+
+.profile-card {
+  width: 80%;
+  height: 150px;
+  color: var(--font-color);
+}
+
+.profile-card img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.profile-card {
+  font-family: var(--font-family);
+  font-size: 14px;
+}
+.email {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+.navigation-links ul li {
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--nav-font-color);
+}
+.theme-changer {
+  width: 70px;
+  height: 30px;
+  border-radius: 50px;
+  padding: 6px 5px;
+  background-color: #191919;
+  transition: 0.2s all;
+}
+.button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--btn-color);
+}
+
+.navlink-active-on-dark{
+  color: var(--font-color-dark-theme);
+}
+.navlink-active-on-light{
+  color: var(--font-color-light-heme);
+}
+
+
+.skeleton{
+  border: none!important;
+  position: relative;
+  border-radius: 25px;
+}
+
+.skeleton-1{
+  max-width: 660px;
+  min-width: 150px;
+  height: 275px;
+  grid-column: 1/1;
+  grid-row: 1/1;
+}
+.skeleton-2{
+  max-width: 300px;
+  min-width: 50px;
+  height: 550px;
+  grid-column: 2/2;
+  grid-row: 1/2;
+}
+.skeleton-3{
+  max-width: 660px;
+  min-width: 150px;
+  height: 600px;
+  grid-column: 1/1;
+  grid-row: 2/2;
+  margin-top: -250px;
+}
+.skeleton-4{
+  max-width: 300px;
+  min-width: 50px;
+  height: 175px;
+  grid-column: 2/2;
+  grid-row: 2/3;
+  margin-top: 25px;
+}
+.skeleton-light{
+  background-image: linear-gradient(to right bottom, gray, white, gray);
+}
+.skeleton-dark{
+  background-image: linear-gradient(to right bottom, black, gray, black);
+}
+
+/* Manuel changing user preferences between dark & light  */
+.dark {
+  animation: float-left 1s ease-in-out forwards;
+}
+.light {
+  animation: float-right 1s ease-in-out forwards;
+}
+
+.btndark {
+  animation: change-bg-dark 1s ease-in-out forwards;
+}
+.btnlight {
+  animation: change-bg-light 1s ease-in-out forwards;
+}
+
+@keyframes float-right {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 40px;
+  }
+}
+@keyframes float-left {
+  from {
+    margin-left: 40px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes change-bg-dark {
+  to {
+    background-color: var(--btn-dark-bg);
+  }
+}
+@keyframes change-bg-light {
+  to {
+    background-color: var(--btn-light-bg);
+  }
+}
+/*  Media queries for dedecting user preferences on theme  */
+/**
+* If you prefer to dedect user theme and make some changes according to preference, use these media queries & check it on js.
+
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --main-color: var(--dark-theme);
+    --article-bg-color: var(--article-bg-color-dark);
+    --font-color: var(--font-color-dark-theme);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  * {
+    --main-color: var(--light-theme);
+    --article-bg-color: var(--article-bg-color-light);
+    --font-color: var(--font-color-light-heme);
+  }
+}
+
+*/
+@media screen and (max-width: 1030px) {
+  nav,
+  article,
+  .right-fixed {
+    display: none;
+  }
+  body::after {
+    content: "This page is not allowed to use on phone or tablets!";
+    font-size: 48px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: bold;
+  }
+}
